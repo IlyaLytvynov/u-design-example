@@ -1,0 +1,41 @@
+.header
+	background $navbarDefaulColor
+	color $navbarDefaulTextColor
+	display flex
+	height 76px
+	padding 30px 30px
+	box-sizing border-box
+	justify-content space-between
+	.logo
+		display flex
+		width 140px
+		.logo-img
+			position relative
+			display table
+			width 16px
+			height 1em
+			margin-right .5em
+			.logo-img-rectangle_s
+				width 4px
+				height 7px
+				position absolute
+				background $navbarDefaulColor
+				top 0
+				left 7px
+			.logo-img-rectangle_l
+				width 18px
+				height 16px
+				position absolute
+				left 50%
+				top 50%
+				margin-left -9px
+				margin-top -8px
+				background $navbarLogoColor
+		.logo-slogan
+			display flex
+			flex-direction column
+			justify-content  center
+			text-transform: uppercase
+
+	.controls
+		display flex
