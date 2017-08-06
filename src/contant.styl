@@ -34,7 +34,11 @@
 			transform translateX(0)
 
 .content-item
-	border 1px solid red
+	margin 1rem 0
+	transition box-shadow 0.5s
+	&:hover
+		box-shadow 2px 8px 20px 0 rgba(31,32,68,.25);
+		transform scale(1.001, 1.001)
 	&:nth-child(even)
 		padding-left 1rem
 	&:nth-child(odd)
@@ -42,7 +46,6 @@
 	> .image
 		margin 0 auto
 	&_footer
-		border 1px solid green
 		display flex
 		padding 1.3rem
 	&_icon
