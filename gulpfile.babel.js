@@ -8,11 +8,14 @@ const livereload = require('gulp-livereload');
 const connect = require('gulp-connect');
 const inject = require('gulp-inject');
 const clean = require('gulp-clean');
+const copy = require('gulp-copy');
+const plumber = require('gulp-plumber');
 
 const dirs = {
     src: 'src',
     dest: 'build'
 };
+
 const paths = {
     src: `${dirs.src}/styles.styl`,
     dest: `${dirs.dest}/styles/`,
@@ -21,9 +24,11 @@ const paths = {
 
 gulp.task('styles', () => {
     return gulp.src(paths.src)
+        .pipe(plumber())
         .pipe(stylus())
         .pipe(gulp.dest(paths.dest))
         .pipe(livereload());
+
 });
 
 gulp.task('server', () => {
@@ -54,15 +59,14 @@ gulp.task('inject', ['styles'], () => {
 });
 
 gulp.task('assets', () => {
-    return gulp.src(['assets/**/*.png', 'assets/**/*.jpg'])
+    return gulp.src(['assets/**/*.*'])
         .pipe(gulp.dest(`${dirs.dest}/assets`))
         .pipe(connect.reload());
 });
 
 gulp.task('clean', () => {
     return gulp.src([
-        `${dirs.dest}/**/*.css`,
-        `${dirs.dest}/**/*.html`
+        `${dirs.dest}/**/*.*`
     ], {read: false})
         .pipe(clean());
 });

@@ -1,0 +1,71 @@
+.main-paragraph
+	padding-top 1.2rem
+	> h1
+		font-weight normal
+		font-size 3.5rem
+
+.main-baner
+	position relative
+	margin-bottom 5rem
+
+.main-baner-link
+	display block
+	position absolute
+	top 14%
+	font-size 0.9rem
+	z-index 2
+	padding 0.2rem 0.2rem 0.6rem
+	overflow hidden
+	color $linkColor
+	&_text
+		display block
+	&_underline
+		display block
+		width 100%
+		height 3px
+		background-color $linkColor
+		position absolute
+		bottom 0
+		left 0
+		transition transform 0.5s
+		transform translateX(-100%)
+	&:hover
+		.main-baner-link_underline
+			transform translateX(0)
+
+.content-item
+	border 1px solid red
+	&:nth-child(even)
+		padding-left 1rem
+	&:nth-child(odd)
+		padding-right 1rem
+	> .image
+		margin 0 auto
+	&_footer
+		border 1px solid green
+		display flex
+		padding 1.3rem
+	&_icon
+		flex 1 1 10%
+		display flex
+		align-items center
+
+	&_tittle
+		flex 1 1 90%
+		padding-left 1.2rem
+		&-head
+			font-weight 600
+			font-size 0.9rem
+			text-transform uppercase
+			opacity .6
+			color $textColor
+		&-content
+			font-weight 400
+			font-size 1.5rem
+
+.pagination-control
+	display flex
+.load-more
+	width auto
+	margin 2rem auto
+
