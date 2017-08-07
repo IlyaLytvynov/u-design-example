@@ -6,30 +6,38 @@ $btnDefaultBGColor=#e6e6e6;
 	cursor pointer
 	text-align center
 	color $textColor
-	height 48px
-	line-height 46px
+	min-height 48px
+	height 100%;
+	display flex
+	justify-content center
+	align-items center
 	text-transform uppercase
 	font-size 1rem
 	position relative
 	> span
-		position absolute
-		top 50%
-		left 50%
-		transform translate(-50%, -50%)
+		position relative
+		z-index 1
 	&-default
 		background transparent
 		border 1px solid $btnDefaultBGColor;
 		font-weight 600
 		&:before
 			content ''
+			display block
 			width 100%
+			height 100%
 			background-color $btnDefaultBGColor
 			position absolute
 			top 0
 			left 0
-			height 0
 			z-index 0
-			transition height 0.7s
+			-webkit-font-smoothing antialiased
+			transform scaleY(0)
+			transform-origin center top
+			transition transform 0.2s ease-in
 		&:hover::before
-			height 100%
+			transform-origin center bottom
+			transform scaleY(1)
+
+
 

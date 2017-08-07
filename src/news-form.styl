@@ -1,0 +1,32 @@
+$inputFormBackground=#232323
+$inputFormTextColor=#ccc;
+$inputFormInputHeight=40px;
+
+.news-form
+  width 85%
+  font-size 1.2rem
+  max-width 350px
+
+  &_head
+    color #FFF
+    font-weight 400
+    font-size 1rem
+  &_content
+    margin-top 1.2rem
+  &_input
+    display flex
+    height 54px px
+    > input
+      flex-basis 80%
+      background $inputFormBackground
+      box-sizing border-box
+      color $inputFormTextColor
+      padding-left 1rem
+      border none
+      font-size 1rem
+    > .btn
+      flex-basis 20%
+      min-width 0
+      border-color $inputFormBackground
+      background #FFF
+      color $inputFormBackground

@@ -1,0 +1,40 @@
+$defaultLeftCoordinates = 5rem
+.page-footer
+  height 80%
+  max-height 600px
+  &_col
+    position relative
+  &_logo
+    position absolute
+    top 30%
+    left $defaultLeftCoordinates
+    transform translateY(-50%)
+    path
+      fill #FFF
+
+  &:before
+    right 50%
+
+  .news-form
+    position absolute
+    top 50%
+    left $defaultLeftCoordinates
+  .copyrights
+    color: #FFF
+    position absolute
+    bottom 5rem
+    left $defaultLeftCoordinates
+  .footer-links
+    position absolute
+    top 40%
+    right 0
+    display flex
+    width 100%
+    border 1px solid red
+    &_container
+      display flex
+      width 80%
+      border 1px solid red
+      > *
+        flex-basis 10%
+
