@@ -1,0 +1,12 @@
+mobile()
+	@media screen and (max-width: $mobile)
+		{block}
+
+tablet()
+	@media screen and (min-width: $mobile - 1) and (max-width: $tablet)
+		{block}
+
+
+laptop()
+	@media screen and (max-width: $tablet - 1)
+		{block}
