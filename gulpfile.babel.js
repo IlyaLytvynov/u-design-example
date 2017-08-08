@@ -23,6 +23,7 @@ const paths = {
 
 
 gulp.task('styles', () => {
+    console.log('STYLES>>');
     return gulp.src(paths.src)
         .pipe(plumber())
         .pipe(stylus())
@@ -40,6 +41,7 @@ gulp.task('server', () => {
 });
 
 gulp.task('html', () => {
+    console.log('HTML>>');
     return gulp.src('src/index.html')
         .pipe(gulp.dest(`${dirs.dest}/`))
         .pipe(connect.reload());
