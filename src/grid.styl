@@ -1,3 +1,7 @@
+$mobile=660px;
+$tablets=992px;
+$laptops=1200px;
+
 .flex-container {
   display: flex;
   justify-content: center;
@@ -16,7 +20,7 @@
   margin-right: auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $mobile) {
   .col-xs-1 {
     flex: 0 0 8.333333333333334%
   }
@@ -79,7 +83,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 992px) {
+@media screen and (min-width:$mobile ) and (max-width: $tablets) {
   .col-sm-1 {
     flex: 0 0 8.333333333333334%
   }
@@ -142,7 +146,7 @@
   }
 }
 
-@media screen and (min-width: 992px) and (max-width: 1200px) {
+@media screen and (min-width: $tablets) and (max-width: $laptops) {
   .col-md-1 {
     flex: 0 0 8.333333333333334%
   }
@@ -205,7 +209,7 @@
   }
 }
 
-@media screen and  (min-width: 1200px) {
+@media screen and  (min-width: $laptops) {
   .col-lg-1 {
     flex: 0 0 8.333333333333334%
   }
