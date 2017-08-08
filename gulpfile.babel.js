@@ -88,3 +88,13 @@ gulp.task('dev', ['clean'], () => {
         'watch'
     );
 });
+
+gulp.task('build', ['clean'], () => {
+  gulp.run(
+    'server',
+    'styles',
+    'html',
+    'inject',
+    'assets'
+  );
+});
