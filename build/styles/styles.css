@@ -204,10 +204,35 @@
     flex-direction: row-reverse;
   }
 }
+@font-face {
+  font-family: 'Kerola';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/kerola-normal.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Kerola';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/kerola-light.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Kerola';
+  font-style: normal;
+  font-weight: 800;
+  src: url("../assets/fonts/kerola-bold.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Kerola';
+  font-style: bold;
+  font-weight: 600;
+  src: url("../assets/fonts/kerola.woff2") format('woff2');
+}
 html {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kerola', Arial, Helvetica, sans-serif;
   height: 100%;
   min-height: 100%;
+  font-weight: 600;
   font-size: 14px;
 }
 body {
@@ -384,30 +409,32 @@ h4 {
 .menu.opened .menu_control-bar:last-child {
   transform: translateY(-3px) rotateZ(-45deg);
 }
-.menu_items {
+.menu_item {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 2px solid transparent;
+  transition: all 0.5s;
+}
+.menu_item:hover {
+  border-bottom: 2px solid #1c1b1b;
 }
 @media screen and (max-width: 768px) {
-  .menu_items {
+  .menu_item {
     width: 100%;
   }
 }
-.menu_items:last-child > a {
-  padding-right: 0;
-}
 @media screen and (max-width: 768px) {
-  .menu_items:last-child > a {
+  .menu_item:last-child > a {
     padding: 1rem;
   }
 }
-.menu_items > a {
+.menu_item > a {
   padding: 1rem;
   color: #1c1b1b;
 }
 @media screen and (max-width: 768px) {
-  .menu_items > a {
+  .menu_item > a {
     text-align: center;
     width: 100%;
     color: #fff;
@@ -455,10 +482,10 @@ h4 {
 .main-paragraph > h1 {
   transition: transform 0.5s;
   position: absolute;
+  font-weight: 400;
   top: -4rem;
-  left: 1rem;
+  left: 0;
   transform: translateY(5rem);
-  font-weight: normal;
   font-size: 3.5rem;
 }
 @media screen and (max-width: 768px) {
@@ -470,8 +497,11 @@ h4 {
   position: relative;
   margin-bottom: 5rem;
 }
+.main-baner > .image {
+  overflow: hidden;
+}
 @media screen and (max-width: 768px) {
-  .main-baner > .image {
+  .main-baner > .image > img {
     width: 120%;
   }
 }

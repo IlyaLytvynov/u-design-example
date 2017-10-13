@@ -10,10 +10,10 @@ $asimetricLayoutMarginMobile = 25rem;
   > h1
     transition transform $defaultAnimationDelay
     position absolute
+    font-weight 400
     top -4rem
-    left 1rem
+    left 0
     transform translateY(5rem)
-    font-weight normal
     font-size 3.5rem
     +mobile()
       font-size 2.5rem
@@ -22,8 +22,10 @@ $asimetricLayoutMarginMobile = 25rem;
   position relative
   margin-bottom 5rem
   > .image
-    +mobile()
-      width 120%
+    overflow hidden
+    > img
+      +mobile()
+        width 120%
   &:before
     top 40%
   &-link
