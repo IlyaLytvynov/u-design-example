@@ -9,6 +9,7 @@ const connect = require('gulp-connect');
 const inject = require('gulp-inject');
 const clean = require('gulp-clean');
 const plumber = require('gulp-plumber');
+const autoprefixer = require('gulp-autoprefixer');
 
 const dirs = {
   src: 'src',
@@ -25,6 +26,10 @@ gulp.task('styles', () => {
   return gulp.src(paths.src)
     .pipe(plumber())
     .pipe(stylus())
+    .pipe(autoprefixer({
+      browsers: ['last 5 versions'],
+      cascade: false
+    }))
     .pipe(gulp.dest(paths.dest))
     .pipe(livereload());
 
