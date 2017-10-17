@@ -1,273 +1,111 @@
-$mobile=660px;
-$tablets=992px;
-$laptops=1200px;
+$mobile = 660px;
+$tablets = 992px;
+$laptops = 1200px;
 
 .flex-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 [class*='col-'] {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .flex-grow {
-  flex-grow: 1;
+	flex-grow: 1;
 }
 
 .flex-container > [class*='col-']:last-child {
-  margin-right: auto;
+	margin-right: auto;
 }
 
-@media screen and (max-width: $mobile) {
-  .col-xs-1 {
-    flex: 0 0 8.333333333333334%
-  }
+$oneColSize = 8.333333%;
+@media screen and (max-width: $mobile)
 
-  .col-xs-2 {
-    flex: 0 0 16.666666666666668%
-  }
+	for colNumber in (1..12)
+		.col-xs-{colNumber}
+			-ms-flex 0 0 colNumber *$oneColSize;
+			flex: 0 0 colNumber *$oneColSize;
+			max-width colNumber *$oneColSize;
+		.col-xs-offset-{colNumber}
+			margin-left colNumber *$oneColSize
 
-  .col-xs-3 {
-    flex: 0 0 25%
-  }
+	.column-xs
+		justify-content: space-between;
+		flex-direction: column
 
-  .col-xs-4 {
-    flex: 0 0 33.333333333333336%
-  }
+	.column-reverse-xs
+		flex-direction: column-reverse;
 
-  .col-xs-5 {
-    flex: 0 0 41.66666666666667%
-  }
+	.row-reverse-xs
+		flex-direction: row-reverse;
 
-  .col-xs-6 {
-    flex: 0 0 50%
-  }
+	.hidden-xs
+		display none !important
 
-  .col-xs-7 {
-    flex: 0 0 58.333333333333336%
-  }
+@media screen and (min-width: $mobile ) and (max-width: $tablets)
+	for colNumber in (1..12)
+		.col-sm-{colNumber}
+			-ms-flex 0 0 colNumber *$oneColSize;
+			flex: 0 0 colNumber *$oneColSize;
+			max-width colNumber *$oneColSize;
+		.col-sm-offset-{colNumber}
+			margin-left colNumber *$oneColSize
 
-  .col-xs-8 {
-    flex: 0 0 66.66666666666667%
-  }
+	.column-sm
+		justify-content: space-between;
+		flex-direction: column
 
-  .col-xs-9 {
-    flex: 0 0 75%
-  }
+	.column-reverse-sm
+		flex-direction: column-reverse;
 
-  .col-xs-10 {
-    flex: 0 0 83.33333333333334%
-  }
+	.row-reverse-sm
+		flex-direction: row-reverse;
 
-  .col-xs-11 {
-    flex: 0 0 91.66666666666667%
-  }
+	.hidden-sm
+		display none !important
 
-  .col-xs-12 {
-    flex: 0 0 100%
-  }
+@media screen and (min-width: $tablets) and (max-width: $laptops)
+	for colNumber in (1..12)
+		.col-md-{colNumber}
+			-ms-flex 0 0 colNumber *$oneColSize;
+			flex: 0 0 colNumber *$oneColSize;
+			max-width colNumber *$oneColSize;
+		.col-md-offset-{colNumber}
+			margin-left colNumber *$oneColSize
 
-  .column-xs {
-    justify-content: space-between;
-    flex-direction: column
-  }
+	.column-md
+		justify-content: space-between;
+		flex-direction: column
 
-  .column-reverse-xs {
-    flex-direction: column-reverse;
-  }
+	.column-reverse-md
+		flex-direction: column-reverse;
 
-  .row-reverse-xs {
-    flex-direction: row-reverse;
-  }
-}
+	.row-reverse-md
+		flex-direction: row-reverse;
 
-@media screen and (min-width:$mobile ) and (max-width: $tablets) {
-  .col-sm-1 {
-    flex: 0 0 8.333333333333334%
-  }
+	.hidden-md
+		display none !important
 
-  .col-sm-2 {
-    flex: 0 0 16.666666666666668%
-  }
+@media screen and  (min-width: $laptops)
+	for colNumber in (1..12)
+		.col-lg-{colNumber}
+			-ms-flex 0 0 colNumber *$oneColSize;
+			flex: 0 0 colNumber *$oneColSize;
+			max-width colNumber *$oneColSize;
+		.col-lg-offset-{colNumber}
+			margin-left colNumber *$oneColSize
 
-  .col-sm-3 {
-    flex: 0 0 25%
-  }
+	.column-lg
+		justify-content: space-between;
+		flex-direction: column
 
-  .col-sm-4 {
-    flex: 0 0 33.333333333333336%
-  }
+	.column-reverse-lg
+		flex-direction: column-reverse;
 
-  .col-sm-5 {
-    flex: 0 0 41.66666666666667%
-  }
+	.row-reverse-lg
+		flex-direction: row-reverse;
 
-  .col-sm-6 {
-    flex: 0 0 50%
-  }
-
-  .col-sm-7 {
-    flex: 0 0 58.333333333333336%
-  }
-
-  .col-sm-8 {
-    flex: 0 0 66.66666666666667%
-  }
-
-  .col-sm-9 {
-    flex: 0 0 75%
-  }
-
-  .col-sm-10 {
-    flex: 0 0 83.33333333333334%
-  }
-
-  .col-sm-11 {
-    flex: 0 0 91.66666666666667%
-  }
-
-  .col-sm-12 {
-    flex: 0 0 100%
-  }
-
-  .column-sm {
-    justify-content: space-between;
-    flex-direction: column
-  }
-
-  .column-reverse-sm {
-    flex-direction: column-reverse;
-  }
-
-  .row-reverse-sm {
-    flex-direction: row-reverse;
-  }
-}
-
-@media screen and (min-width: $tablets) and (max-width: $laptops) {
-  .col-md-1 {
-    flex: 0 0 8.333333333333334%
-  }
-
-  .col-md-2 {
-    flex: 0 0 16.666666666666668%
-  }
-
-  .col-md-3 {
-    flex: 0 0 25%
-  }
-
-  .col-md-4 {
-    flex: 0 0 33.333333333333336%
-  }
-
-  .col-md-5 {
-    flex: 0 0 41.66666666666667%
-  }
-
-  .col-md-6 {
-    flex: 0 0 50%
-  }
-
-  .col-md-7 {
-    flex: 0 0 58.333333333333336%
-  }
-
-  .col-md-8 {
-    flex: 0 0 66.66666666666667%
-  }
-
-  .col-md-9 {
-    flex: 0 0 75%
-  }
-
-  .col-md-10 {
-    flex: 0 0 83.33333333333334%
-  }
-
-  .col-md-11 {
-    flex: 0 0 91.66666666666667%
-  }
-
-  .col-md-12 {
-    flex: 0 0 100%
-  }
-
-  .column-md {
-    justify-content: space-between;
-    flex-direction: column
-  }
-
-  .column-reverse-md {
-    flex-direction: column-reverse;
-  }
-
-  .row-reverse-md {
-    flex-direction: row-reverse;
-  }
-}
-
-@media screen and  (min-width: $laptops) {
-  .col-lg-1 {
-    flex: 0 0 8.333333333333334%
-  }
-
-  .col-lg-2 {
-    flex: 0 0 16.666666666666668%
-  }
-
-  .col-lg-3 {
-    flex: 0 0 25%
-  }
-
-  .col-lg-4 {
-    flex: 0 0 33.333333333333336%
-  }
-
-  .col-lg-5 {
-    flex: 0 0 41.66666666666667%
-  }
-
-  .col-lg-6 {
-    flex: 0 0 50%
-  }
-
-  .col-lg-7 {
-    flex: 0 0 58.333333333333336%
-  }
-
-  .col-lg-8 {
-    flex: 0 0 66.66666666666667%
-  }
-
-  .col-lg-9 {
-    flex: 0 0 75%
-  }
-
-  .col-lg-10 {
-    flex: 0 0 83.33333333333334%
-  }
-
-  .col-lg-11 {
-    flex: 0 0 91.66666666666667%
-  }
-
-  .col-lg-12 {
-    flex: 0 0 100%
-  }
-
-  .column-lg {
-    justify-content: space-between;
-    flex-direction: column
-  }
-
-  .column-reverse-lg {
-    flex-direction: column-reverse;
-  }
-
-  .row-reverse-lg {
-    flex-direction: row-reverse;
-  }
-}
+	.hidden-lg
+		display none !important
